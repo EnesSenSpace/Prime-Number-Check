@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    * {
+      margin: 0;
+      padding: 1em;
+      font-family: cursive;
+    }
+    h1 {
+      color: red;
+      text-align: center;
+    }
+    p {
+      font-size: 1em;
+      padding: 2em;
+      margin: 2em 1.2em;
+      line-height: 3em;
+    }
+
+    .container {
+      justify-content: center;
+      align-items: center;
+      margin: 2% 32%;
+      width: 100%;
+    }
+    .container input {
+      border-radius: 1em 0;
+      position: relative;
+    }
+    .container button {
+      width: 10%;
+      position: relative;
+      border-radius: 0 1em;
+    }
+  </style>
+  <head></head>
+  <body>
+    <h1>- Find The Biggest Number - </h1>
+    <div class="container">
+      <input type="text" name="num1" id="myInput" value="" />
+      <button onclick="myFunction()">Click</button>
+      <p id="p1"></p>
+    </div>
+  </body>
+  <script>
+    function myFunction() {
+      var i;
+      let text = "";
+      let isPrime = true;
+      let primeNumber = document.getElementById("myInput").value;
+
+      for (i = 2; i < primeNumber; i++) {
+        if (primeNumber % i === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+
+      text += isPrime ? "is a prime number. <br>" : "is not a prime. <br>";
+
+      document.getElementById("p1").innerHTML = text;
+    }
+  </script>
+</html>
